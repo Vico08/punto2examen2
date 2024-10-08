@@ -37,3 +37,26 @@
                 string categoria = ObtenerCategoria(promedio);
 
                 Console.WriteLine($"Estudiante {i + 1}: Promedio = {promedio:F2}, Categoría = {categoria}");
+
+                if (promedio >= 4.0)
+                {
+                    estudiantesGanados++;
+                }
+                else
+                {
+                    estudiantesPerdidos++;
+                }
+            }
+
+            Console.WriteLine($"Estudiantes ganados: {estudiantesGanados}");
+            Console.WriteLine($"Estudiantes perdidos: {estudiantesPerdidos}");
+
+            Console.WriteLine("¿Desea ingresar otro grupo de estudiantes? (s/n):");
+            char respuesta = Console.ReadKey().KeyChar;
+            continuar = respuesta == 's' || respuesta == 'S';
+            Console.WriteLine();
+
+            estudiantesGanados = 0;
+            estudiantesPerdidos = 0;
+        }
+    }
